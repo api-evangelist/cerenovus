@@ -1,7 +1,30 @@
 aid: cerenovus
 name: Cerenovus
-description: Cerenovus is a company surfaced as a portfolio company of y-combinator and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Cerenovus (cerenovus.ai) is a San Francisco AI software company backed by Y
+  Combinator (Summer 2026 batch), founded in 2026 by a team out of Harvard and
+  NYU Stern. It builds "the AI company brain" — software that reads everything a
+  company produces (email, chat, documents, CRM, ERP, tickets, meeting notes)
+  and returns findings with citations back to the source. Its products are
+  Noesis (the enterprise flagship company brain built for CEOs, CFOs, and
+  private-equity operating partners), Midas (an AI sales platform that runs
+  inside a company's existing CRM and is paid out of the revenue it produces),
+  and Compendium (shared real-time context and durable memory for engineering
+  and customer-facing teams and their AI agents, including shared Claude Code
+  sessions). Cerenovus is not affiliated with the similarly named Johnson &
+  Johnson MedTech neurovascular device business.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://www.cerenovus.ai/favicon-48.png
 url: https://raw.githubusercontent.com/api-evangelist/cerenovus/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +34,45 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
+- Artificial Intelligence
+- AI Agents
+- Knowledge Management
+- Enterprise Software
+- Sales Enablement
+- Developer Tools
+- Y Combinator
 apis: []
+common:
+- type: DomainSecurity
+  url: security/cerenovus-domain-security.yml
+- type: Website
+  name: Cerenovus Website
+  url: https://www.cerenovus.ai/
+- type: About
+  name: About Cerenovus
+  url: https://www.cerenovus.ai/about
+- type: Blog
+  name: Cerenovus Blog
+  url: https://www.cerenovus.ai/blog
+- type: LLMsTxt
+  name: Cerenovus llms.txt
+  url: llms/cerenovus-llms.txt
+- type: LinkedIn
+  name: Cerenovus on LinkedIn
+  url: https://www.linkedin.com/company/cerenovus-ai
+- type: CompanyProfile
+  name: Cerenovus on Y Combinator
+  url: https://www.ycombinator.com/companies/cerenovus
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

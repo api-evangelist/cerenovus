@@ -1,0 +1,1 @@
+{"resource":"https://api.cerenovus.ai/","authorization_servers":["https://api.cerenovus.ai/"],"scopes_supported":["vault:read","vault:write","dashboard:write","mailbox:rw","session:read","session:control","device:control","agent:read","agent:run"],"resource_name":"Compendium vault"}

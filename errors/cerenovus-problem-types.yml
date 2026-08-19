@@ -1,0 +1,58 @@
+generated: '2026-08-14'
+method: probed
+source: observed responses from https://api.cerenovus.ai
+format: oauth2-error
+format_note: >-
+  RFC 6749 section 5.2 style {"error", "error_description"} JSON, NOT RFC 9457
+  application/problem+json. There is no published error reference — Cerenovus ships no
+  developer documentation — so this catalog is limited to envelopes actually observed
+  on live unauthenticated probes. It is deliberately partial and must not be read as
+  the provider's full error surface.
+coverage: observed-only
+envelope:
+  content_type: application/json; charset=utf-8
+  fields:
+  - name: error
+    type: string
+    description: OAuth 2.0 error code
+  - name: error_description
+    type: string
+    description: Human-readable explanation
+problems:
+- status: 401
+  code: invalid_token
+  title: Missing or invalid bearer token
+  observed_at: https://api.cerenovus.ai/mcp
+  observed_body: '{"error":"invalid_token","error_description":"Missing Authorization header"}'
+  remediation: >-
+    Complete the OAuth 2.1 authorization-code + PKCE flow advertised at
+    https://api.cerenovus.ai/.well-known/oauth-authorization-server and retry with an
+    Authorization: Bearer header. The 401 carries a WWW-Authenticate resource_metadata
+    parameter pointing at the protected-resource document.
+- status: 400
+  code: invalid_request
+  title: Malformed authorization request
+  observed_at: https://api.cerenovus.ai/authorize
+  observed_body_shape: >-
+    error_description carries a serialized array of per-field validation issues
+    (expected / code / path / message), i.e. a schema validator's output rather than
+    prose.
+  remediation: Supply every required authorization-request parameter, starting with client_id.
+- status: 405
+  code: null
+  title: Method not allowed
+  observed_at:
+  - https://api.cerenovus.ai/token
+  - https://api.cerenovus.ai/register
+  - https://api.cerenovus.ai/revoke
+  remediation: These endpoints are POST-only.
+- status: 404
+  code: null
+  title: Not found
+  observed_at: https://api.cerenovus.ai/
+  note: >-
+    The API host returns text/html for unknown paths rather than JSON, so 404 is not
+    part of the JSON error contract.
+x-evidence:
+  fetched: '2026-08-14'
+  sample_size: 4

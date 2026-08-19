@@ -1,0 +1,32 @@
+generated: '2026-08-14'
+method: searched
+source: https://www.cerenovus.ai/sitemap.xml
+plan_count: 0
+note: >-
+  Cerenovus publishes no pricing at all. /pricing returns 404, the 26-URL sitemap
+  contains no pricing, plans or packaging page, and neither llms.txt nor llms-full.txt
+  states a price, a tier, a unit of consumption or a minimum. The commercial motion is a
+  single "Book a demo" path — a Calendly-backed form at /book-demo, plus
+  founders@cerenovus.ai — where scope is agreed per engagement after a fit
+  conversation. Eight named engagement types are published (Operational Due Diligence,
+  Value Creation Plan, Post-Merger Integration, Exit Readiness, Operational Diagnostic,
+  Decision Intelligence, Operational Foresight & Early Warning, Spend & Vendor
+  Intelligence) but none carries a price.
+pricing_model: contact-sales
+currency: null
+plans: []
+sales_gate:
+  url: https://www.cerenovus.ai/book-demo
+  status: 200
+  mechanism: Calendly booking plus founders@cerenovus.ai
+x-evidence:
+  fetched: '2026-08-14'
+  probes:
+  - url: https://www.cerenovus.ai/pricing
+    http_status: 404
+  - url: https://www.cerenovus.ai/sitemap.xml
+    http_status: 200
+  - url: https://www.cerenovus.ai/book-demo
+    http_status: 200
+  - url: https://www.cerenovus.ai/llms.txt
+    http_status: 200

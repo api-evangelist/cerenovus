@@ -1,0 +1,36 @@
+generated: '2026-08-14'
+method: searched
+source: npm, PyPI, RubyGems, crates.io and the Cerenovus GitHub organization
+package_count: 0
+note: >-
+  No first-party client library exists in any public registry. The Cerenovus GitHub
+  organization is real and first-party (founders@cerenovus.ai, blog cerenovus.ai,
+  created 2026-06-05) but has zero public repositories, so there is nothing to derive
+  from source either. The only callable surface Cerenovus ships is a remote,
+  OAuth-protected MCP endpoint, which an MCP client reaches over HTTP with no SDK
+  required — no local stdio package is published for it. Recorded as a checked zero,
+  not an unchecked gap.
+packages: []
+registries_checked:
+- registry: npm
+  query: cerenovus
+  result: 0 matches
+  url: https://registry.npmjs.org/-/v1/search?text=cerenovus
+- registry: pypi
+  query: cerenovus
+  result: 404
+  url: https://pypi.org/pypi/cerenovus/json
+- registry: rubygems
+  query: cerenovus
+  result: 404
+  url: https://rubygems.org/api/v1/gems/cerenovus.json
+- registry: crates.io
+  query: cerenovus
+  result: no crate
+  url: https://crates.io/api/v1/crates/cerenovus
+- registry: github
+  query: org Cerenovus
+  result: 200, public_repos = 0
+  url: https://github.com/Cerenovus
+x-evidence:
+  fetched: '2026-08-14'

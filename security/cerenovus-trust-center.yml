@@ -1,0 +1,42 @@
+generated: '2026-08-14'
+method: searched
+probe: true
+url: https://www.cerenovus.ai/trust-and-security
+title: Trust and Security FAQ
+note: >-
+  A real, public, prerendered trust page written for IT and security teams. It names
+  certifications but claims none of them yet — Cerenovus states plainly that SOC 2
+  Type II and ISO 27001 are "in the process of being certified" and that both take
+  several months. Recorded here as in_progress, NOT as held certifications, and no
+  Compliance pointer is emitted on the strength of a pending audit.
+certifications: []
+certifications_in_progress:
+- SOC 2 Type II
+- ISO 27001
+commitments:
+- claim: Customer data is not used to train models
+  detail: >-
+    Cerenovus states it does not train its own models on customer data and holds
+    zero-data-retention agreements with OpenAI and Anthropic.
+- claim: Deployment isolation
+  detail: >-
+    Default is a single-tenant deployment on a cloud machine run by Cerenovus, with the
+    network restricted to customer machines for upload and Cerenovus machines for
+    installation and telemetry. Bring-your-own-cloud and full on-premise deployments are
+    offered where stricter isolation is required.
+- claim: Data minimization and retention
+  detail: >-
+    Connectors are scoped to the sources a customer approves; retention is
+    customer-defined and data is kept only while actively in use.
+- claim: Legal instruments offered in lieu of certification
+  detail: Cerenovus offers to sign NDAs and other agreements while certification is pending.
+evidence:
+- source: https://www.cerenovus.ai/trust-and-security
+  http_status: 200
+  keywords:
+  - trust and security
+  - soc 2 type ii
+  - iso 27001
+  - zero-data-retention
+  - single-tenant
+  fetched: '2026-08-14'

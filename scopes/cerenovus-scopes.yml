@@ -1,0 +1,61 @@
+generated: '2026-08-14'
+method: probed
+source: https://api.cerenovus.ai/.well-known/oauth-protected-resource
+note: >-
+  These nine scopes are published verbatim by Cerenovus in scopes_supported on BOTH its
+  RFC 8414 authorization-server metadata and its RFC 9728 protected-resource metadata.
+  Cerenovus publishes no scopes/permissions reference page, so no descriptions are
+  recorded — the description fields below are deliberately null rather than invented.
+  The scope names are the provider's; the meaning of each is not documented anywhere
+  public and must not be guessed.
+docs: null
+docs_note: no public scopes or permissions reference page exists on cerenovus.ai
+schemes:
+- name: CerenovusOAuth
+  source: https://api.cerenovus.ai/.well-known/oauth-authorization-server
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.cerenovus.ai/authorize
+    tokenUrl: https://api.cerenovus.ai/token
+scope_count: 9
+scopes:
+- scope: vault:read
+  description: null
+  flows:
+  - authorizationCode
+- scope: vault:write
+  description: null
+  flows:
+  - authorizationCode
+- scope: dashboard:write
+  description: null
+  flows:
+  - authorizationCode
+- scope: mailbox:rw
+  description: null
+  flows:
+  - authorizationCode
+- scope: session:read
+  description: null
+  flows:
+  - authorizationCode
+- scope: session:control
+  description: null
+  flows:
+  - authorizationCode
+- scope: device:control
+  description: null
+  flows:
+  - authorizationCode
+- scope: agent:read
+  description: null
+  flows:
+  - authorizationCode
+- scope: agent:run
+  description: null
+  flows:
+  - authorizationCode
+x-evidence:
+  fetched: '2026-08-14'
+  url: https://api.cerenovus.ai/.well-known/oauth-protected-resource
+  http_status: 200

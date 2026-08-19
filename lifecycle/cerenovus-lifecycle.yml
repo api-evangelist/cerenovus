@@ -1,0 +1,40 @@
+generated: '2026-08-14'
+method: probed
+source: live probes of www.cerenovus.ai and api.cerenovus.ai
+note: >-
+  Recorded absence. Cerenovus publishes no versioning policy, no deprecation policy, no
+  SLA, no changelog and no status page. The company shipped a public marketing site and
+  an undocumented OAuth-protected MCP endpoint; there is no developer lifecycle surface
+  to capture. This file exists so the absence is measured rather than assumed, and no
+  StatusPage or Deprecation pointer is emitted, because neither exists.
+versioning:
+  scheme: null
+  current: null
+  docs: null
+deprecation:
+  policy_url: null
+  sunset_header: false
+sla:
+  url: null
+  uptime_target: null
+status_page: null
+changelog: null
+health_endpoint:
+  url: https://api.cerenovus.ai/health
+  status: 200
+  body: '{"data":{"ok":true}}'
+  note: an unauthenticated liveness endpoint, not a status page
+deprecated_operations: []
+x-evidence:
+  fetched: '2026-08-14'
+  probes:
+  - url: https://www.cerenovus.ai/status
+    http_status: 404
+  - url: https://www.cerenovus.ai/changelog
+    http_status: 404
+  - url: https://status.cerenovus.ai
+    http_status: null
+    note: NXDOMAIN
+  - url: https://www.cerenovus.ai/sitemap.xml
+    http_status: 200
+    note: 26 URLs, none of them a status, changelog, versioning or deprecation page

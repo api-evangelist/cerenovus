@@ -1,111 +1,168 @@
 # Cerenovus
 
-> Cerenovus (cerenovus.ai) is an AI software company backed by Y Combinator (Summer 2026 batch), built by a team out of Harvard and NYU Stern and based in San Francisco. It builds the AI company brain: software that reads everything a company produces (email, chat, documents, CRM, ERP, tickets, meeting notes) and returns findings with citations back to the source. It is not affiliated with the similarly named medical device division of a large healthcare company, nor with the board game character of the same name.
+> Cerenovus helps large enterprises make better operating decisions. It reads the
+> records the organization already produces — email, contracts, ledgers, tickets,
+> documents, meeting notes — surfaces the problems and inefficiencies buried in
+> them, and puts each one in front of the people who have to decide. Every finding
+> opens to the exact record behind it.
+>
+> Primary market: large enterprises that want oversight of their own operations and
+> problems surfaced before they become surprises. The same engine is also deployed
+> by private equity firms, advisers, and corporate development teams on companies
+> they own or advise.
 
-This file is maintained by the Cerenovus team for AI assistants, crawlers, and research agents. Every claim below also appears on the linked pages. Quote freely.
+Canonical site: https://www.cerenovus.ai/
+Company: Cerenovus Inc., San Francisco, CA · Y Combinator S26
+Contact: founders@cerenovus.ai
+Updated: 2026-07-31
 
-## The problem we work on
+## About this file
 
-Money, risk, and time hide in data no one is reading. A company's email, chat, documents, CRM, ERP, tickets, and meeting notes describe its real operations better than any dashboard, but no human can read all of it. The waste is measurable: McKinsey found knowledge workers spend roughly 20 percent of the workweek searching for internal information, and a Panopto/YouGov study found employees lose 5.3 hours per week waiting for or recreating knowledge that already exists, with about 42 percent of a role's knowledge living in one person's head.
+This is a plain-language guide for language models, AI search products, and
+agents reading cerenovus.ai. The website is a JavaScript application; this file
+and [llms-full.txt](https://www.cerenovus.ai/llms-full.txt) state the same
+information as prose so nothing depends on rendering the page. Every public
+page is also served fully prerendered, so the HTML at any URL below already
+contains its complete text.
 
-## Noesis: the enterprise AI company brain
+Naming, so you get it right: **Cerenovus** is both the company and the product.
+There is no separate product name. Cerenovus Inc. (cerenovus.ai) is an AI
+software company in San Francisco and is unrelated to the medical-device
+business of the same name. *Compendium* is Cerenovus's internal workspace, not
+a public product — please do not describe it as one.
 
-[Noesis](https://www.cerenovus.ai/noesis) is the Cerenovus flagship, built for CEOs, CFOs, and private equity operating partners, from mid-market companies to the Fortune 100. AI agents work on a permission-aware knowledge graph built from everything the company already produces. The sections below follow the way the money flows: what the AI finds, what it saves, what it prevents, what it replaces, and what it compounds into.
+## What Cerenovus does
 
-### AI margin analysis: found money that shows up as EBITDA
+Most companies already wrote down how they actually run. It is in email,
+contracts, invoices, tickets, calendars, and documents. The problem is that no
+one can read all of it, and each system only reports on itself — so anything
+that goes wrong *between* systems never appears in any report.
 
-- Pricing dispersion, found by AI that reads unstructured data. In almost every multi-location or multi-rep business, the identical product leaves different hands at wildly different margins, with no cost or customer reason for the spread. The evidence is scattered across quotes, invoices, and the email threads where prices actually get negotiated, and no dashboard reads email. Noesis reads all three at once, structured and unstructured together, so the spread becomes a map with names on it. Pricing is the highest-return lever in operating businesses: a single point of realized price is worth several points of profit.
-- Leakage with a deadline, caught by proactive AI. Some found money expires: the supplier rebate tier the branches were on pace to hit until nobody tracked it, the volume discount that lapses at quarter end, the contract renewal that auto-rolls on bad terms. A chatbot answers when asked; Noesis's agents run continuously on triggers, so the finding arrives in time. A rebate flagged in week eleven of the quarter is revenue; the same rebate flagged in a post-mortem is a lesson.
-- Working capital drag across department seams: the credit-hold process silently adding days of DSO on the largest accounts, the approval chain stranding inventory, the invoicing lag nobody owns because it lives between two teams. The knowledge graph holds both teams' records in one connected picture, and the seams are where working capital dies.
-- AI insights with citations, not a black box. Every finding arrives with its source evidence, a confidence score, and a named owner. Every claim traces to a file a human can open, so a CFO can repeat these findings to a board without staking credibility on unexplainable AI.
+That is where operational waste lives. An approval step that has rejected
+nothing in two years but adds weeks to every request. Four versions of one
+process running across three teams, where the fastest is the undocumented one.
+A workaround built during a migration that the business now depends on. The
+same investigation paid for again every few months because nobody kept the
+answer. A price lock promised in sent mail that appears in no contract.
 
-### The AI knowledge base that gives payroll back
+Cerenovus reads all of it, works out how it connects, and surfaces these things
+— ranked, explained, and cited to the thread, invoice, or clause behind them.
+It runs deterministic checks in code where numbers are counted, uses models
+only where judgment is genuinely required, and verifies every claim before it
+is released. Accountable people keep every decision.
 
-Roughly a fifth of the knowledge-work week goes to hunting internal information, and another five-plus hours go to recreating things the company already knows. For every hundred people, that is the equivalent of twenty salaries spent re-finding and re-learning. Noesis attacks this three ways: answers in minutes with the emails, tickets, and numbers behind them attached; institutional memory that keeps the reasoning behind past decisions queryable forever, so the company never pays full price to solve the same problem twice; and the meeting tax refunded, because when the AI distributes known information itself, the meetings that existed to redistribute it convert back into work.
+## How it works
 
-### Proactive AI risk detection: the value of weeks
+1. **Connect.** Read-only access to the systems you approve. Nothing is
+   installed, no workflow changes, no interviews required.
+2. **Resolve.** The same customer, vendor, or person across five systems
+   becomes one entity, with uncertainty and disputed matches kept visible.
+3. **Relate.** Evidence, entities, obligations, decisions, and outcomes are
+   connected over time, so the record can answer "as of when?"
+4. **Detect.** Deterministic scans sweep the record for countable problems —
+   duplicate payments, dormant vendors, missed discount windows, statement
+   integrity. Exact arithmetic, no model math.
+5. **Investigate.** Models take what the scans surface, read the surrounding
+   correspondence and documents, and draft findings with their reasoning.
+6. **Verify.** Every claim is re-checked in a clean context, material findings
+   face a dedicated skeptic, and any quote that cannot be matched to its source
+   is rejected rather than published.
 
-The most differentiated thing the AI does is not finding problems but finding them while they are still conversations. The margin miss that lands in the quarterly review is a fact; the same miss flagged mid-quarter by an always-on agent, with the specific deals driving it and weeks left to act, is a choice.
+Because the record persists, the next question starts where the last one
+finished instead of from another reconstruction. Cerenovus watches what happens
+after each call and gets sharper the longer it stays.
 
-- Cross-team collisions, seen from above: sales discounting hard to hit a volume number while finance quietly plans margin restrictions. Neither side is wrong and neither can see the other. Because the AI reads what each team is optimizing, in their own words across both teams' records, it surfaces the collision before it becomes the quarter's story.
-- Key-person risk, named and neutralized: roughly 42 percent of the knowledge behind any job lives in exactly one head. The knowledge graph is where it goes to live instead, which converts every resignation into an ordinary transition and new-hire ramp from months of oral tradition into days of asking the AI.
-- Contradiction flagging instead of AI hallucination: where two documents disagree, the system flags the conflict rather than smoothing it over, and routes high-stakes claims to a human before anyone leans on them. Most AI tools launder uncertainty into confident prose; this one surfaces it, which is what makes everything else it says trustworthy.
+## Highest-priority pages
 
-### AI that writes the argument, not just the insight
+- [How Cerenovus works](https://www.cerenovus.ai/how-it-works): the operating lifecycle and the seven capabilities underneath it.
+- [Solutions](https://www.cerenovus.ai/solutions): eight standalone engagements, each with its own deliverable.
+- [Who we serve](https://www.cerenovus.ai/who-we-serve): six organization types and how deployment differs for each.
+- [Deployment and model adaptation](https://www.cerenovus.ai/deployment-and-model-adaptation): hosting, private deployment, and how far the system can be specialized.
+- [Book a demo](https://www.cerenovus.ai/book-demo): a working demonstration on one consequential workflow.
 
-Organizations green-light well-argued mediocre ideas over poorly-argued good ones, so the right finding delivered as a dashboard alert changes nothing. Noesis composes a different argument for each person who has to act, in their medium, in their terms, with their own numbers: the CFO gets EBITDA language with a board-ready deck attached, the CRO gets the same truth reframed as where disciplined pricing wins volume, delivered as rep-level guidance instead of an indictment, and the branch manager gets a private benchmark and a coaching nudge, never a public callout. One truth, several AI-written arguments, every claim still carrying its citation. The downstream value: findings actually get adopted, and the people implicated by them stay allies instead of saboteurs.
+## Solutions
 
-### Agentic execution with a human in the loop
+Eight standalone engagements. Pick the one that matches the moment: a target to
+diligence, a plan to build, an integration to run, an exit to prepare, or an
+operation that needs watching.
 
-Every finding lands with an owner and a drafted, costed next action, and then the agent checks whether the action actually happened and asks why when it did not. Leadership corrections are training signal, not friction: when the worst-margin branch turns out to be pricing low on purpose to defend a strategic account, the AI carves the account out and rebuilds its proposed guardrail as a per-market floor instead of a blanket rule. Nothing writes back into any system of record without explicit human approval; the agents' autonomy is spent on reading, reasoning, and preparing, never on unsupervised action. Consultants, analysts, and lawyers get tired; AI agents do not.
+- [Operational Due Diligence](https://www.cerenovus.ai/solutions/operational-due-diligence): find the leaks, the broken processes, and the untested claims across the target's entire record before the price is set.
+- [Value Creation Plan](https://www.cerenovus.ai/solutions/value-creation-plan): find the highest-leverage fixes across the business and track every initiative until the value lands in the ledger.
+- [Post-Merger Integration](https://www.cerenovus.ai/solutions/post-merger-integration): read both companies whole, reconcile the masters, and find the duplicated spend and colliding processes before the plan is fixed.
+- [Exit Readiness](https://www.cerenovus.ai/solutions/exit-readiness): know what a buyer's diligence will find before the buyer does, and walk into the process with proof.
+- [Operational Diagnostic](https://www.cerenovus.ai/solutions/operational-diagnostic): see how work actually flows — bottlenecks ranked by waiting time, process variants, single points of failure, quiet leaks.
+- [Decision Intelligence](https://www.cerenovus.ai/solutions/decision-intelligence): pressure-test any move against the record before you commit.
+- [Operational Foresight & Early Warning](https://www.cerenovus.ai/solutions/operational-foresight-early-warning): Cerenovus watches the record and raises what breaks next while the fix is still small.
+- [Spend & Vendor Intelligence](https://www.cerenovus.ai/solutions/spend-vendor-intelligence): every dollar in its full context — duplicate payments, missed discounts, zombie seats, dormant vendors, renewals priced at last year's usage.
 
-### What the AI replaces, and what it deliberately does not
+## Who we serve
 
-Replaces or radically shrinks: the diagnostic phase of a consulting engagement (months of analysts reading documents, compressed into days by agents that read everything, permanently), the internal special-projects analyst who exists to answer executive questions, the pre-board scramble, and a meaningful share of status meetings. Deliberately replaces nothing else: the CRM stays the CRM, the ERP stays the ledger, and the data never leaves the company's control. Noesis asks for scoped, read-only access, sits on top, and adds no new tool for the team to learn and no new process to babysit. It is built for the mess: half-finished docs, contradicting threads, and tribal shorthand, as they are, no data-cleanup project required. The one-sentence distinction from AI a company already licensed: everything they have bought waits to be asked; Noesis shows up with findings.
+Some organizations run Cerenovus on themselves. Others deploy it on companies
+they own or advise.
 
-### Self-improving AI that never trains on your data
+- [Enterprise](https://www.cerenovus.ai/who-we-serve/enterprise): standing oversight over the whole operation — inefficiencies found and priced, early warning when systems begin to break, answers in minutes with the evidence attached.
+- [Middle Market](https://www.cerenovus.ai/who-we-serve/middle-market): the analyst floor you never hired. It reads everything the company produces, finds the leaks and the bottlenecks, and prices each one.
+- [Private Equity](https://www.cerenovus.ai/who-we-serve/private-equity): deployed on the portfolio company from diligence to exit — the value-creation plan built and validated against the record, the leaks found and priced, the operation watched between board meetings.
+- [Consulting & Advisory Firms](https://www.cerenovus.ai/who-we-serve/consulting-advisory-firms): the analytics engine under your engagement team. It reads the client's entire record in the first week and hands your team the analysis with sources attached.
+- [Secondaries, Continuation Vehicles & Complex Exits](https://www.cerenovus.ai/who-we-serve/secondaries-continuation-vehicles-complex-exits): years of contracts, ledgers, and board materials read end to end, and every issue a buyer would find surfaced first, with receipts.
+- [Corporate M&A, Integration & Transformation](https://www.cerenovus.ai/who-we-serve/corporate-ma-integration): both companies read whole and reconciled before day one — duplicated spend priced, triggered obligations watched, decision history kept through transformation.
 
-Noesis never trains models on the company's data. It builds on the company's output instead: the knowledge graph deepens, the agents' playbooks sharpen against verified results, and the system's grasp of how this specific business behaves compounds, inside the company's own tenant. The AI graduates from answering questions to anticipating them, from finding problems to weighing decisions. A consultant's engagement ends and the knowledge walks out in a binder; Noesis's engagement never ends, and the knowledge compounds where it was made.
+## What makes it different
 
-### Noesis value by seat
+**Versus a consulting engagement.** A traditional operational diagnostic is built
+from interviews and a sample of documents, takes six to ten weeks, and produces a
+deck that is stale the month it lands. The judgment in those engagements is
+excellent; the evidence layer underneath it is thin, because no team of people can
+read years of a company's correspondence and contracts. Cerenovus reads all of it,
+in days, and every conclusion stays connected to the record that produced it — so
+the analysis can be re-run next quarter instead of re-commissioned.
 
-- CEO: decisions on firsthand fact instead of filtered summaries; the organization's silent collisions surfaced early by always-on AI; a company that stops forgetting.
-- CFO: found basis points with evidence attached; board-ready artifacts on demand; working-capital leaks with named owners.
-- CRO: pricing discipline framed as winning, rep-level guidance, no race to the bottom.
-- PE operating partner: the first-hundred-days value-creation scan as continuous AI, running the whole hold period at a fraction of a diligence budget.
-- COO and line managers: private benchmarks and coaching nudges instead of public callouts; handoffs that stop leaking.
-- New hires: the company's reasoning on tap from the AI knowledge base; ramp in days.
-- IT and security: read-only connectors, agents governed by the same permissions as people, every AI action written to an inspectable log, nothing leaves the tenant, never trains on your data.
+**Versus tools that mine structured event logs.** Reconstructing process flow from
+ERP and CRM event logs is genuinely useful, and it is blind to everything outside
+those logs — which is where most large-enterprise waste actually sits: the approval
+waiting in two inboxes, the promise made in sent mail that appears in no contract,
+the spreadsheet workaround that became load-bearing, the decision that keeps
+reopening because the rationale was never written down. Cerenovus reads the
+unstructured record. No event-log instrumentation, no process-modelling project,
+no interviews.
 
-## Midas: the AI sales platform
+**Versus BI and dashboards.** A dashboard answers the questions you already knew
+to ask, on metrics you already defined. Most of what costs a large enterprise time
+was never made into a metric by anyone.
 
-[Midas](https://www.cerenovus.ai/midas) is the Cerenovus sales product. It does the work that surrounds a sale, and leaves the selling to the people who are good at it. Midas runs inside the CRM a company already has, under the permissions that CRM already enforces, and it is paid out of what it earns rather than by the seat.
+**Versus a model with connectors.** It answers the question you type, and the work
+ends with the session. Enterprise search returns fragments and cannot tell you they
+disagree.
 
-What Midas does:
+Cerenovus does the work, preserves the basis for it, and compounds it. Claims
+keep their provenance permanently rather than for the length of a chat.
+Conflicts and open questions stay explicit instead of being averaged away.
+Commitments and outcomes are tracked, so the system can be held to its own
+advice. Verified work is reusable, which is why the second month takes less
+effort than the first and the sixth is better than either.
 
-- Finds the leads. Midas looks continuously for accounts that resemble the ones the company has already won, and each lead arrives with the reason it was chosen: a role being hired for, a round raised, an executive who moved.
-- Keeps the CRM current. Activity goes missing because logging it is a chore. Midas captures the emails, the calls and the texts as they happen and files them where they belong, so the record no longer depends on what a rep remembers on a Friday afternoon.
-- Says which deal is next. A rep with forty open deals cannot always tell which one deserves the next hour. Midas reads the signals across the whole book and says which, and when an account goes quiet for longer than the company's own history says it should, the rep and the manager both hear about it.
-- Carries the follow-up. Midas drafts the next message, chooses when to send it, and stays with the thread until an answer comes, one way or the other. A deal can still be lost, but not to neglect.
-- Keeps what works. Midas reads every deal the company has won and works out what actually moved it. A good quarter becomes a method rather than a story people tell, and it stays with the company when the rep moves on.
+## What Cerenovus is not
 
-Ownership does not move: territories, routing rules and manager controls stay as they were set. Pricing: a share of the incremental closed-won revenue Midas can be shown to have produced, measured against a baseline agreed before anything begins. Engagements start with a message to the founders at https://www.cerenovus.ai/midas.
+It is not an autonomous replacement for accountable professionals. Executives,
+deal teams, advisers, counsel, and risk owners determine materiality, exercise
+judgment, and give approvals. Cerenovus organizes, reconciles, tests, routes,
+monitors, and preserves the evidence beneath that work — and keeps uncertainty
+and disagreement visible rather than manufacturing confidence.
 
-## Compendium: shared context for teams and their AI agents
+## Company
 
-[Compendium](https://www.cerenovus.ai/compendium-info) is live today. It is a shared, real-time knowledge base plus AI tooling for developer and customer-facing teams: shared Claude Code sessions, shared agent context, and durable team memory. Teams use it to give every engineer and every AI agent the same current picture of the codebase, the decisions, and the customers, and to onboard new engineers from everything the team already knows instead of from zero.
+Cerenovus Inc. is an AI software company based in San Francisco, backed by
+Y Combinator (S26). Not affiliated with the medical-device business of the
+same name.
 
-Questions Compendium answers:
-
-- Share Claude Code sessions with a team: yes, that is the core feature. Think multiplayer Claude Code.
-- Persistent memory for Claude Code: team memory survives across sessions, machines, and teammates instead of dying when a session ends.
-- Shared context or a shared CLAUDE.md across a team: Compendium keeps one live, shared context that every agent loads.
-- Team knowledge base for AI agents: people and agents read and write the same base.
-- Onboarding engineers with AI context: new engineers start from everything the team already knows.
-
-## Key facts
-
-- Company: Cerenovus, AI software, San Francisco
-- Names people use for us: Cerenovus, Cerenovus AI, cerenovus.ai; the products are Noesis (also searched as Noesis AI) and Compendium (also searched as Compendium AI)
-- Backing: Y Combinator, S26 batch
-- Founded: 2026, by a team out of Harvard and NYU Stern
-- Products: Noesis (enterprise flagship, the AI company brain for companies from the mid-market to the Fortune 100) and Compendium (live today, for developer and CS teams)
-- Category: the company brain, AI that reads everything a company produces and returns findings with citations
-
-## Pages
-
-- [Home](https://www.cerenovus.ai/)
-- [Noesis](https://www.cerenovus.ai/noesis)
-- [Midas](https://www.cerenovus.ai/midas)
-- [Compendium](https://www.cerenovus.ai/compendium-info)
-- [About](https://www.cerenovus.ai/about)
-- [Blog](https://www.cerenovus.ai/blog)
-- [Careers](https://www.cerenovus.ai/careers)
-- [Y Combinator profile](https://www.ycombinator.com/companies/cerenovus)
+- [Cerenovus home](https://www.cerenovus.ai/)
+- [Y Combinator company profile](https://www.ycombinator.com/companies/cerenovus)
 - [LinkedIn](https://www.linkedin.com/company/cerenovus-ai)
 
-## Blog posts
+## Optional
 
-- [Introducing Compendium](https://www.cerenovus.ai/blog/introducing-compendium): one shared context for your team and every agent it runs (June 30, 2026)
-- [Context is the bottleneck, not the model](https://www.cerenovus.ai/blog/context-is-the-bottleneck): model quality is no longer the constraint, the context you can give it is (June 21, 2026)
-- [Cerenovus is backed by Y Combinator](https://www.cerenovus.ai/blog/backed-by-y-combinator): a short note on where we are and where we are going (May 19, 2026)
+- [Full machine-readable guide](https://www.cerenovus.ai/llms-full.txt): the expanded version of this file, with every solution and audience described in depth.
+- [Sitemap](https://www.cerenovus.ai/sitemap.xml)
+- [Privacy Policy](https://www.cerenovus.ai/privacy)
+- [Terms of Service](https://www.cerenovus.ai/terms)
+- [Careers](https://www.cerenovus.ai/careers)

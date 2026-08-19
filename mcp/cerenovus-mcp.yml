@@ -1,0 +1,75 @@
+generated: '2026-08-14'
+method: probed
+status: published
+source: https://api.cerenovus.ai/mcp
+note: >-
+  A real, hosted, remote MCP server runs at https://api.cerenovus.ai/mcp. It was found
+  by probing the API host discovered from DNS (api.cerenovus.ai is a CNAME to
+  cerenovus-backend.onrender.com), not from any Cerenovus documentation — the company
+  publishes no developer portal, no API reference, and no mention of this endpoint on
+  cerenovus.ai. The endpoint is OAuth-protected and answers an unauthenticated
+  tools/list with HTTP 401 and a spec-correct WWW-Authenticate challenge carrying a
+  resource_metadata pointer, so the live tool list and per-tool inputSchemas require
+  authenticated introspection. NO TOOL LIST IS RECORDED HERE because none could be
+  read; the scopes below are the provider's own published scope vocabulary from its
+  anonymous discovery documents, and they are the only evidence of what the server
+  exposes.
+server:
+  name: Cerenovus
+  transport: http
+  url: https://api.cerenovus.ai/mcp
+  resource_name: Compendium vault
+  runtime: Express on Render, fronted by Cloudflare
+deployment:
+  mode: remote
+  endpoint: https://api.cerenovus.ai/mcp
+  auth: oauth
+  verified: probed
+authorization:
+  spec: MCP authorization (OAuth 2.1 + RFC 9728 protected resource metadata)
+  authorization_server: https://api.cerenovus.ai/
+  protected_resource_metadata: https://api.cerenovus.ai/.well-known/oauth-protected-resource
+  authorization_server_metadata: https://api.cerenovus.ai/.well-known/oauth-authorization-server
+  dynamic_client_registration: https://api.cerenovus.ai/register
+  pkce: S256
+  scopes:
+  - vault:read
+  - vault:write
+  - dashboard:write
+  - mailbox:rw
+  - session:read
+  - session:control
+  - device:control
+  - agent:read
+  - agent:run
+tools: []
+tools_note: >-
+  Auth-gated. POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} returns HTTP 401
+  invalid_token. Cerenovus publishes no llms.txt tool list either, so there is no
+  secondary source to fall back to. Tool names and input schemas need an authenticated
+  introspection pass.
+x-evidence:
+  fetched: '2026-08-14'
+  probes:
+  - url: https://api.cerenovus.ai/mcp
+    method: POST tools/list
+    http_status: 401
+    content_type: application/json; charset=utf-8
+    body: '{"error":"invalid_token","error_description":"Missing Authorization header"}'
+    www_authenticate: >-
+      Bearer error="invalid_token", error_description="Missing Authorization header",
+      resource_metadata="https://api.cerenovus.ai/.well-known/oauth-protected-resource"
+  - url: https://api.cerenovus.ai/.well-known/oauth-protected-resource
+    http_status: 200
+  - url: https://api.cerenovus.ai/.well-known/oauth-authorization-server
+    http_status: 200
+  - url: https://api.cerenovus.ai/health
+    http_status: 200
+    body: '{"data":{"ok":true}}'
+x-ownership:
+  verified: true
+  reasoning: >-
+    api.cerenovus.ai is the same registrable domain as the company's canonical site,
+    the authorization server issuer is https://api.cerenovus.ai/, and the protected
+    resource names itself "Compendium vault" — Compendium is named in Cerenovus's own
+    llms.txt as the internal workspace Cerenovus runs its work in.

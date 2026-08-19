@@ -1,0 +1,37 @@
+generated: '2026-08-14'
+method: probed
+source: response headers observed on https://api.cerenovus.ai
+limit_count: 0
+note: >-
+  No rate limits are published and none are signalled at runtime. Cerenovus has no
+  developer documentation in which to document limits, and the two unauthenticated
+  endpoints that answer on the API host return no rate-limit headers of any kind — no
+  X-RateLimit-*, no RateLimit-* (RFC 9331 style), no Retry-After. An agent calling this
+  surface has no runtime signal to back off on. The MCP endpoint itself is
+  OAuth-gated, so any authenticated-tier limits could not be observed.
+limits: []
+headers:
+  observed: []
+  checked:
+  - X-RateLimit-Limit
+  - X-RateLimit-Remaining
+  - X-RateLimit-Reset
+  - RateLimit
+  - RateLimit-Limit
+  - RateLimit-Remaining
+  - RateLimit-Reset
+  - RateLimit-Policy
+  - Retry-After
+exhaustion_status: null
+x-evidence:
+  fetched: '2026-08-14'
+  probes:
+  - url: https://api.cerenovus.ai/health
+    http_status: 200
+    rate_limit_headers: none
+  - url: https://api.cerenovus.ai/mcp
+    http_status: 401
+    rate_limit_headers: none
+  - url: https://www.cerenovus.ai/
+    http_status: 200
+    rate_limit_headers: none

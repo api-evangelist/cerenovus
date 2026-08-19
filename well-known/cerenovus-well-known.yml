@@ -1,0 +1,65 @@
+generated: '2026-08-14'
+method: probed
+source: live GET of /.well-known/* on every Cerenovus host known to this profile
+note: >-
+  Two hosts were probed. The marketing host (www.cerenovus.ai, Vercel) serves a real
+  RFC 9116 security.txt and nothing else — every other /.well-known/ path returns the
+  site's 404 SPA shell (text/html, 18626 bytes), which is a miss, not a document. The
+  API host (api.cerenovus.ai, Render behind Cloudflare) serves real RFC 8414
+  authorization-server metadata and RFC 9728 protected-resource metadata anonymously,
+  which is how the OAuth-protected MCP server at https://api.cerenovus.ai/mcp
+  advertises itself. No agent card was served at either the canonical
+  /.well-known/agent-card.json or the legacy /.well-known/agent.json on either host.
+hosts:
+- host: https://www.cerenovus.ai
+  role: marketing site
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    content_type: text/plain; charset=utf-8
+    file: cerenovus-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: https://api.cerenovus.ai
+  role: API host (MCP server + OAuth authorization server)
+  documents:
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    content_type: application/json; charset=utf-8
+    file: cerenovus-oauth-authorization-server.json
+    spec: RFC 8414
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    content_type: application/json; charset=utf-8
+    file: cerenovus-oauth-protected-resource.json
+    spec: RFC 9728
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp-server
+    status: 404
+x-evidence:
+  fetched: '2026-08-14'
+  hits: 3
+  misses: 20

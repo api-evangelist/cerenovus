@@ -2,18 +2,15 @@ generated: '2026-08-14'
 method: probed
 status: published
 source: https://api.cerenovus.ai/mcp
-note: >-
-  A real, hosted, remote MCP server runs at https://api.cerenovus.ai/mcp. It was found
-  by probing the API host discovered from DNS (api.cerenovus.ai is a CNAME to
-  cerenovus-backend.onrender.com), not from any Cerenovus documentation — the company
-  publishes no developer portal, no API reference, and no mention of this endpoint on
-  cerenovus.ai. The endpoint is OAuth-protected and answers an unauthenticated
-  tools/list with HTTP 401 and a spec-correct WWW-Authenticate challenge carrying a
-  resource_metadata pointer, so the live tool list and per-tool inputSchemas require
-  authenticated introspection. NO TOOL LIST IS RECORDED HERE because none could be
-  read; the scopes below are the provider's own published scope vocabulary from its
-  anonymous discovery documents, and they are the only evidence of what the server
-  exposes.
+note: A real, hosted, remote MCP server runs at https://api.cerenovus.ai/mcp. It was found by probing
+  the API host discovered from DNS (api.cerenovus.ai is a CNAME to cerenovus-backend.onrender.com), not
+  from any Cerenovus documentation — the company publishes no developer portal, no API reference, and
+  no mention of this endpoint on cerenovus.ai. The endpoint is OAuth-protected and answers an unauthenticated
+  tools/list with HTTP 401 and a spec-correct WWW-Authenticate challenge carrying a resource_metadata
+  pointer, so the live tool list and per-tool inputSchemas require authenticated introspection. NO TOOL
+  LIST IS RECORDED HERE because none could be read; the scopes below are the provider's own published
+  scope vocabulary from its anonymous discovery documents, and they are the only evidence of what the
+  server exposes.
 server:
   name: Cerenovus
   transport: http
@@ -25,6 +22,11 @@ deployment:
   endpoint: https://api.cerenovus.ai/mcp
   auth: oauth
   verified: probed
+  probe_prior: (never probed)
+  probe: gated
+  probe_why: RFC 9728 challenge on the MCP path only
+  checked: '2026-09-11'
+  source: claimed-backlog re-probe 2026-09-11
 authorization:
   spec: MCP authorization (OAuth 2.1 + RFC 9728 protected resource metadata)
   authorization_server: https://api.cerenovus.ai/
@@ -43,11 +45,9 @@ authorization:
   - agent:read
   - agent:run
 tools: []
-tools_note: >-
-  Auth-gated. POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} returns HTTP 401
-  invalid_token. Cerenovus publishes no llms.txt tool list either, so there is no
-  secondary source to fall back to. Tool names and input schemas need an authenticated
-  introspection pass.
+tools_note: Auth-gated. POST {"jsonrpc":"2.0","id":1,"method":"tools/list"} returns HTTP 401 invalid_token.
+  Cerenovus publishes no llms.txt tool list either, so there is no secondary source to fall back to. Tool
+  names and input schemas need an authenticated introspection pass.
 x-evidence:
   fetched: '2026-08-14'
   probes:
@@ -56,8 +56,7 @@ x-evidence:
     http_status: 401
     content_type: application/json; charset=utf-8
     body: '{"error":"invalid_token","error_description":"Missing Authorization header"}'
-    www_authenticate: >-
-      Bearer error="invalid_token", error_description="Missing Authorization header",
+    www_authenticate: Bearer error="invalid_token", error_description="Missing Authorization header",
       resource_metadata="https://api.cerenovus.ai/.well-known/oauth-protected-resource"
   - url: https://api.cerenovus.ai/.well-known/oauth-protected-resource
     http_status: 200
@@ -68,8 +67,7 @@ x-evidence:
     body: '{"data":{"ok":true}}'
 x-ownership:
   verified: true
-  reasoning: >-
-    api.cerenovus.ai is the same registrable domain as the company's canonical site,
-    the authorization server issuer is https://api.cerenovus.ai/, and the protected
-    resource names itself "Compendium vault" — Compendium is named in Cerenovus's own
-    llms.txt as the internal workspace Cerenovus runs its work in.
+  reasoning: api.cerenovus.ai is the same registrable domain as the company's canonical site, the authorization
+    server issuer is https://api.cerenovus.ai/, and the protected resource names itself "Compendium vault"
+    — Compendium is named in Cerenovus's own llms.txt as the internal workspace Cerenovus runs its work
+    in.
